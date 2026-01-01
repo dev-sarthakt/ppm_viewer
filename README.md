@@ -1,4 +1,4 @@
-#PPM Image Viewer (C++ / SDL)
+# PPM Image Viewer (C++ / SDL)
 
 This project is a lightweight PPM (Portable Pixmap) image viewer written in C++, using SDL for window creation and pixel display. It is designed as a learning-focused tool that demonstrates low-level image parsing, raw pixel manipulation, and software rendering concepts.
 
@@ -6,11 +6,12 @@ The viewer supports ASCII PPM (P3) images and reads pixel data directly from a f
 
 A command-line flag allows optional portrait (rotated) rendering, showcasing coordinate transformation and basic image rotation logic. The project intentionally avoids external image libraries to emphasize understanding of file formats, memory layout, and pixel-level rendering.
 
-#Features
+
+# Features
 
 Parses P3 PPM image format
 
-Reads input from file or stdin
+Reads input from file
 
 Direct per-pixel RGB rendering
 
@@ -18,9 +19,10 @@ Optional portrait / rotated display mode
 
 Minimal dependencies (SDL only)
 
-Cross-platform, fast startup
+Cross-platform
 
-Purpose
+
+# Purpose
 
 This project is meant to deepen understanding of:
 
@@ -33,3 +35,21 @@ Software rendering pipelines
 Image coordinate systems and transformations
 
 Interaction between CPU-side buffers and display APIs
+
+
+# Compile
+
+###Fedora
+```bash
+g++ -std=gnu++26 iv.cpp $(pkg-config --cflags --libs sdl3) -o iv.out
+```
+
+
+# Run
+
+| Terminal Commands            | Portrait |
+| ---------------------------- | -------- |
+| cat file.ppm | ./iv.out      |    ❌    |
+| cat file.ppm | ./iv.out -p   |    ✅    |
+| less file.ppm | ./iv.out     |    ❌    |
+| less file.ppm | ./iv.out -p  |    ✅    |
