@@ -37,10 +37,11 @@ Image coordinate systems and transformations
 Interaction between CPU-side buffers and display APIs
 
 
-# Compile
+# Build
 
 ### Fedora
 ```bash
+sudo dnf install SDL3-devel -y
 g++ -std=gnu++26 iv.cpp $(pkg-config --cflags --libs sdl3) -o iv.out
 ```
 
