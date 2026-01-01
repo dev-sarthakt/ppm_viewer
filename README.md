@@ -39,7 +39,7 @@ Interaction between CPU-side buffers and display APIs
 
 # Compile
 
-###Fedora
+### Fedora
 ```bash
 g++ -std=gnu++26 iv.cpp $(pkg-config --cflags --libs sdl3) -o iv.out
 ```
@@ -47,9 +47,12 @@ g++ -std=gnu++26 iv.cpp $(pkg-config --cflags --libs sdl3) -o iv.out
 
 # Run
 
-| Terminal Commands            | Portrait |
-| ---------------------------- | -------- |
-| cat file.ppm | ./iv.out      |    ❌    |
-| cat file.ppm | ./iv.out -p   |    ✅    |
-| less file.ppm | ./iv.out     |    ❌    |
-| less file.ppm | ./iv.out -p  |    ✅    |
+### Landscape
+```bash
+less file.ppm | ./iv.out
+```
+
+### Portrait
+```
+less file.ppm | ./iv.out -p
+```
